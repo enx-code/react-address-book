@@ -50,7 +50,8 @@ export default function App() {
 
           <Route
             path="/contact/:id"
-            element={<ContactsView contacts={contacts} />}/>
+              element={<ContactsView 
+              contacts={contacts} />}/>
         </Routes>
       </main>
     </>

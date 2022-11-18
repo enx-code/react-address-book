@@ -21,7 +21,7 @@ function ContactsList(props) {
           return (
             <li className="contact" key={index}>
               <p>
-                {firstName} {lastName}
+                {firstName} {lastName} 
               </p>
               <p>
                 { /** TODO: Make a Link here to view contact */}
