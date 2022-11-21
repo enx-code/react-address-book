@@ -12,7 +12,7 @@ function ContactsAdd(props) {
     lastName: "",
     street: "",
     city: "",
-    
+
   })
   const navigate = useNavigate();
   //TODO: Implement controlled form
@@ -26,7 +26,10 @@ function ContactsAdd(props) {
         firstName: newContact.firstName,
         lastName: newContact.lastName,
         street: newContact.street,
-        city: newContact.city
+        city: newContact.city,
+        email: newContact.email,
+        linkedIn: newContact.linkedIn,
+        twitter: newContact.twitter
        })
     };
     console.log("userNewData", userNewData, "dataFromUser", newContact)
@@ -58,6 +61,16 @@ function ContactsAdd(props) {
       <input id="city" name="city" type="text" required
       onChange={(e)=>setNewContact({...newContact, city: e.target.value})} />
 
+      <label htmlFor="email">Email:</label>
+      <input id="email" name="email" type="text"
+      onChange={(e)=>setNewContact({...newContact, email: e.target.value})} />
+
+      <label htmlFor="linkedIn">LinkedIn:</label>
+      <input id="linkedIn" name="linkedIn" type="text"
+      onChange={(e)=>setNewContact({...newContact, linkedIn: e.target.value})} />
+      <label htmlFor="twittwer">Twitter:</label>
+      <input id="twitter" name="twitter" type="text"
+      onChange={(e)=>setNewContact({...newContact, twitter: e.target.value})} />
       <div className="actions-section">
         <button className="button blue" type="submit">
           Create
