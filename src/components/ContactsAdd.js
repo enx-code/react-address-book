@@ -11,13 +11,13 @@ function ContactsAdd(props) {
     firstName: "",
     lastName: "",
     street: "",
-    city: ""
+    city: "",
+    
   })
   const navigate = useNavigate();
   //TODO: Implement controlled form
   //send POST to json server on form submit
   const onSubmit = (event) => {
-    console.log("add new contact", event, "new", newContact)
     event.preventDefault();
     const userNewData = {
       method: 'POST',
@@ -29,14 +29,14 @@ function ContactsAdd(props) {
         city: newContact.city
        })
     };
-    console.log("userNewData", userNewData)
+    console.log("userNewData", userNewData, "dataFromUser", newContact)
     fetch("http://localhost:4000/contacts", userNewData)
         .then((res) => res.json())
         .then((data) => {setContacts([...contacts, data])
         console.log("new data", data)
         navigate("/")
         });
-  }
+  };
 
   return (
     <form className="form-stack contact-form" onSubmit={onSubmit}>
