@@ -1,13 +1,30 @@
-import { useEffect, useState } from "react"
-import { Link, useSearchParams } from "react-router-dom"
+import { useState } from "react"
+
+import { Link, useNavigate} from "react-router-dom"
 
 function ContactsList(props) {
-  
+ 
+  const navigate = useNavigate()
   //"contacts" must be passed as prop to this component
-  const { contacts } = props
-  // useEffect(()=>{
+  const { contacts, setContacts } = props
+  
+  const handleDelete = (id) => {
+    console.log("contact id", id)
 
-  // }, [])
+    fetch(`http://localhost:4000/contacts/` + id, 
+      { method: "DELETE", })
+        .then(res => res.json())
+        .then(res => setContacts(res))
+        navigate("/");
+        // fetch("http://localhost:4000/contacts")
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     setContacts(data);
+        //     navigate("/")
+        //   });
+      
+    
+  };
 
   return (
     <>
@@ -28,6 +45,14 @@ function ContactsList(props) {
                 <Link to={`/contacts/${contact.id}`} state={{contact}}>
                   View
                 </Link>
+                <br />
+                <Link to={`/contacts/${contact.id}`} state={{contact}}>
+                  Edit
+                </Link>
+                <br />
+                <span onClick={(e)=>handleDelete(contact.id)}>
+                  Delete
+                </span>
 
               </p>
             </li>

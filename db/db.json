@@ -1,80 +1,24 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Carmack",
-      "street": "10 Keen Street",
-      "city": "London"
+      "firstName": "Tomb",
+      "lastName": "Boss",
+      "street": "King",
+      "city": "Londond",
+      "email": "London@yahoo.com",
+      "linkedIn": "enx-code",
+      "twitter": "enx-code",
+      "id": 1
     },
     {
-      "id": 2,
-      "firstName": "Grace",
-      "lastName": "Hopper",
-      "street": "32 Deebug Road",
-      "city": "London"
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "street": "",
-      "city": "",
-      "id": 3
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "street": "",
-      "city": "",
-      "id": 4
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "street": "",
-      "city": "",
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "street": "",
-      "city": "",
-      "id": 8
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "street": "",
-      "city": "",
-      "id": 9
-    },
-    {
-      "firstName": "Enkhbat",
-      "lastName": "",
-      "street": "",
-      "city": "",
-      "id": 10
-    },
-    {
-      "firstName": "Enkhbat",
-      "lastName": "Baatar",
-      "street": "FLAT1, 78A NORTH END ROAD",
-      "city": "London",
-      "id": 11
-    },
-    {
-      "firstName": "Enkhbat",
-      "lastName": "Baatar",
-      "street": "FLAT1, 78A NORTH END ROAD",
-      "city": "London",
-      "id": 12
+      "firstName": "Selenege",
+      "lastName": "Aimag",
+      "street": "London",
+      "city": "Manchester",
+      "email": "enx-code",
+      "linkedIn": "enx-code",
+      "twitter": "enx-code",
+      "id": 2
     },
     {
       "firstName": "Enkhbat",
@@ -82,9 +26,9 @@
       "street": "FLAT1, 78A NORTH END ROAD",
       "city": "London",
       "email": "enkh6at@yahoo.com",
-      "linkedIn": "enx-code",
-      "twitter": "enx-code",
-      "id": 13
+      "linkedIn": "",
+      "twitter": "",
+      "id": 3
     }
   ]
 }

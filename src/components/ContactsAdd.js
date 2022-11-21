@@ -12,12 +12,15 @@ function ContactsAdd(props) {
     lastName: "",
     street: "",
     city: "",
-
+    email: "",
+    linkedIn: "",
+    twitter: ""
   })
   const navigate = useNavigate();
   //TODO: Implement controlled form
   //send POST to json server on form submit
   const onSubmit = (event) => {
+   
     event.preventDefault();
     const userNewData = {
       method: 'POST',
@@ -46,31 +49,54 @@ function ContactsAdd(props) {
       <h2>Create Contact</h2>
 
       <label htmlFor="firstName">First Name</label>
-      <input id="firstName" name="firstName" type="text" required
+      <input 
+      id="firstName" 
+      name="firstName" 
+      type="text" required
       onChange={(e) => setNewContact({ ...newContact, firstName: e.target.value })} />
 
       <label htmlFor="lastName">Last Name:</label>
-      <input id="lastName" name="lastName" type="text" required
+      <input 
+      id="lastName" 
+      name="lastName" 
+      type="text" required
       onChange={(e)=>setNewContact({...newContact, lastName: e.target.value})} />
 
       <label htmlFor="street">Street:</label>
-      <input id="street" name="street" type="text" required
+      <input 
+      id="street" 
+      name="street" 
+      type="text" required
       onChange={(e)=>setNewContact({...newContact, street: e.target.value})} />
 
       <label htmlFor="city">City:</label>
-      <input id="city" name="city" type="text" required
+      <input 
+      id="city" 
+      name="city" 
+      type="text" required
       onChange={(e)=>setNewContact({...newContact, city: e.target.value})} />
 
       <label htmlFor="email">Email:</label>
-      <input id="email" name="email" type="text"
+      <input 
+      id="email" 
+      name="email" 
+      type="text"
       onChange={(e)=>setNewContact({...newContact, email: e.target.value})} />
 
       <label htmlFor="linkedIn">LinkedIn:</label>
-      <input id="linkedIn" name="linkedIn" type="text"
+      <input 
+      id="linkedIn" 
+      name="linkedIn" 
+      type="text"
       onChange={(e)=>setNewContact({...newContact, linkedIn: e.target.value})} />
+
       <label htmlFor="twittwer">Twitter:</label>
-      <input id="twitter" name="twitter" type="text"
+      <input 
+      id="twitter" 
+      name="twitter" 
+      type="text"
       onChange={(e)=>setNewContact({...newContact, twitter: e.target.value})} />
+
       <div className="actions-section">
         <button className="button blue" type="submit">
           Create
