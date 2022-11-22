@@ -4,16 +4,22 @@ import ContactsList from "./components/ContactsList"
 import ContactsAdd from "./components/ContactsAdd"
 import ContactsView from "./components/ContactsView"
 import "./styles/styles.css"
+import ContactEdit from "./components/ContactEdit"
 
 export default function App() {
   const [contacts, setContacts] = useState([])
-  
+
+  if(contacts){
+    console.log("working running twice")
+  }
   //TODO: Load all contacts on useEffect when component first renders
   useEffect(()=>{
     fetch("http://localhost:4000/contacts")
       .then((res)=>res.json())
       .then((data)=>{setContacts(data)
-      console.log("contacts", data)})
+        
+        console.log("contacts", data)
+        })
 
   }, [])
 
@@ -53,8 +59,8 @@ export default function App() {
               element={<ContactsView 
               contacts={contacts} />}/>
           <Route
-            path="/contacts/:id/edit"
-            element={<ContactsAdd 
+            path="/contact/:id/edit"
+            element={<ContactEdit 
             contacts={contacts}
             setContacts={setContacts} />} />
         </Routes>

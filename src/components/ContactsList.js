@@ -17,7 +17,14 @@ function ContactsList(props) {
         .then(()=> {
           fetch(`http://localhost:4000/contacts/`)
             .then(res => res.json())
-            .then((data) => setContacts(data))
+            .then((data) => {
+              // take data, which is the DELETED CONTACT
+              // update contacts array to equal `data`
+              // this means that your contacts array is 
+              // replaced by a JS object corresponding 
+              // to the DELETED contact
+              setContacts(data)})
+            navigate("/");
         }) 
   };
 
@@ -28,7 +35,7 @@ function ContactsList(props) {
 
       </header>
       <ul className="contacts-list">
-        {contacts.map((contact, index) => {
+         {contacts.map((contact, index) => {
           const { firstName, lastName } = contact
           return (
             <li className="contact" key={index}>
@@ -41,10 +48,10 @@ function ContactsList(props) {
                   View
                 </Link>
                 <br />
-                {/* <Link to={`/contacts/${contact.id}`} state={{contact}}>
+                <Link to={`/contact/${contact.id}/edit`} state={{contact}}>
                   Edit
                 </Link>
-                <br /> */}
+                <br />
                 <span onClick={(e)=>handleDelete(contact.id)}>
                   Delete
                 </span>
