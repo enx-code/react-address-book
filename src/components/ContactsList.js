@@ -14,16 +14,11 @@ function ContactsList(props) {
     fetch(`http://localhost:4000/contacts/` + id, 
       { method: "DELETE", })
         .then(res => res.json())
-        .then(res => setContacts(res))
-        navigate("/");
-        // fetch("http://localhost:4000/contacts")
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     setContacts(data);
-        //     navigate("/")
-        //   });
-      
-    
+        .then(()=> {
+          fetch(`http://localhost:4000/contacts/`)
+            .then(res => res.json())
+            .then((data) => setContacts(data))
+        }) 
   };
 
   return (
@@ -46,10 +41,10 @@ function ContactsList(props) {
                   View
                 </Link>
                 <br />
-                <Link to={`/contacts/${contact.id}`} state={{contact}}>
+                {/* <Link to={`/contacts/${contact.id}`} state={{contact}}>
                   Edit
                 </Link>
-                <br />
+                <br /> */}
                 <span onClick={(e)=>handleDelete(contact.id)}>
                   Delete
                 </span>
